@@ -3,11 +3,11 @@ requires = ["setuptools", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "slim"
+name = "pnnl-slim"
 authors = [
-    { name = "Aaron Tuor", email = "todo@pnnl.gov" },
-    { name = "Jan Drgona", email = "todo@pnnl.gov" },
-    { name = "Elliot Skomski", email = "todo@pnnl.gov" },
+    { name = "Aaron Tuor", email = "aaron.tuor@pnnl.gov" },
+    { name = "Jan Drgona", email = "jan.drgona@pnnl.gov" },
+    { name = "Elliot Skomski", email = "elliot.skomski@pnnl.gov" },
 ]
 
 description = "Constrained linear map parametrizations in PyTorch"
@@ -16,16 +16,20 @@ readme = "README.md"
 requires-python = ">=3.8"
 license = { text = "BSD-3-Clause" }
 classifiers = [
-    "Programming Language :: Python :: 3",
-    "Deep Learning",
-    "Pytorch",
-    "Linear Models",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
 ]
-dependencies = ["torch"]
 
+keywords = ["Deep Learning", "Pytorch", "Linear Models"]
+
+dependencies = ["torch"]
 
 dynamic = ["version"]
 
+[tool.setuptools.dynamic]
+version = { attr = "pnnl_slim.__version__" }
+
 [tool.setuptools]
-packages = ["slim"]
+packages = ["pnnl_slim"]
 zip-safe = false

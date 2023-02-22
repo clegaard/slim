@@ -31,7 +31,7 @@ import math
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from slim.butterfly import Butterfly
+from pnnl_slim.butterfly import Butterfly
 
 
 class LinearBase(nn.Module, ABC):

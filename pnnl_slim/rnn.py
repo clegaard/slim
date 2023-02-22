@@ -7,12 +7,12 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 # ecosystem imports
-import slim
+import pnnl_slim
 
 
 class RNNCell(nn.Module):
     def __init__(self, input_size, hidden_size, bias=False, nonlin=F.gelu,
-                 hidden_map=slim.Linear, input_map=slim.Linear, input_args=dict(),
+                 hidden_map=pnnl_slim.Linear, input_map=pnnl_slim.Linear, input_args=dict(),
                  hidden_args=dict()):
         """
 
@@ -130,21 +130,21 @@ if __name__ == '__main__':
 
     for bias in [True, False]:
         for num_layers in [1, 2]:
-            for name, map in slim.maps.items():
+            for name, map in pnnl_slim.maps.items():
                 print(name)
                 print(map)
                 rnn = RNN(8, hidden_size=8, num_layers=num_layers, cell_args={'bias': bias,
                                                                               'nonlin': F.gelu,
                                                                               'hidden_map': map,
-                                                                              'input_map': slim.Linear})
+                                                                              'input_map': pnnl_slim.Linear})
                 out = rnn(x)
                 print(out[0].shape, out[1].shape)
 
-            for map in set(slim.maps.values()) - slim.square_maps:
+            for map in set(pnnl_slim.maps.values()) - pnnl_slim.square_maps:
                 print(name)
                 rnn = RNN(8, hidden_size=16, num_layers=num_layers, cell_args={'bias': bias,
                                                                                'nonlin': F.gelu,
                                                                                'hidden_map': map,
-                                                                               'input_map': slim.Linear})
+                                                                               'input_map': pnnl_slim.Linear})
                 out = rnn(x)
                 print(out[0].shape, out[1].shape)

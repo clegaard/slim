@@ -1,5 +1,5 @@
 import torch
-import slim
+import pnnl_slim as slim
 
 sparse_maps = [
     slim.L0Linear,

@@ -1,5 +1,5 @@
 import torch
-import slim
+import pnnl_slim as slim
 
 if __name__ == '__main__':
     """
