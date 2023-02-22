@@ -5,10 +5,19 @@
 Drop in replacements for pytorch nn.Linear for stable learning and inductive priors 
 in physics informed machine learning applications.
 
-## [Complete documentation](https://pnnl.github.io/slim/)
+## Documentation
+See online [documentation](https://pnnl.github.io/slim/)
 
-## Install dependencies manually
+## Installation
 
+### pip
+``` bash
+python3 -m venv venv
+source venv/bin/activate
+python3 -m pip install .
+```
+
+### Conda
 ```console
 $ conda create -n slim python=3.7
 $ conda install pytorch torchvision cudatoolkit=10.2 -c pytorch
